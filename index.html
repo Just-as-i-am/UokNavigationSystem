@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Campus Navigation System</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ================= MAP ================= -->
+  <div id="map"></div>
+
+  <!-- ================= TOPBAR ================= -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="https://www.kashmiruniversity.net/" target="_blank">
+        <img src="KUGreen11.png" alt="University of Kashmir Logo" />
+      </a>
+
+      <div class="brandText">
+        <h1>Campus Map</h1>
+        <p>Navigate Smarter</p>
+      </div>
+    </div>
+
+    <div class="searchBox">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search buildings, gates, cafes..."
+        autocomplete="off"
+      />
+      <span>🔍</span>
+      <div id="searchSuggestions" class="searchSuggestions"></div>
+    </div>
+  </header>
+
+  <!-- ================= CATEGORY FILTER ================= -->
+  <aside class="categoryPanel">
+    <button class="category active" type="button" data-filter="all">All</button>
+    <button class="category" type="button" data-filter="academic">Academic</button>
+    <button class="category" type="button" data-filter="hostel">Hostels</button>
+    <button class="category" type="button" data-filter="cafe">Cafes</button>
+    <button class="category" type="button" data-filter="entrance">Gates</button>
+    <button class="category" type="button" data-filter="parking">Parking</button>
+  </aside>
+
+  <!-- ================= MAP CONTROLS ================= -->
+  <div class="mapControls">
+    <button id="zoomIn" type="button">+</button>
+    <button id="zoomOut" type="button">−</button>
+    <button id="locateBtn" type="button">⌖</button>
+  </div>
+
+  <!-- ================= BOTTOM PANEL ================= -->
+  <aside id="bottomPanel" class="bottomPanel">
+    <div>
+      <h3 id="bottomTitle">Campus Map</h3>
+      <p id="bottomDesc">Search or select a category to explore University of Kashmir campus.</p>
+    </div>
+
+    <button id="bottomDirectionBtn" type="button">Get Directions</button>
+  </aside>
+
+  <!-- ================= INFO CARD ================= -->
+  <aside id="infoCard" class="infoCard">
+    <button id="closeCard" class="closeBtn" type="button">×</button>
+
+    <div class="cardImageBox">
+      <img id="cardImage" src="images/default-building.jpg" alt="Campus place" />
+    </div>
+
+    <span id="cardCategory" class="cardCategory">Category</span>
+    <h2 id="cardTitle">Building Name</h2>
+    <p id="cardDesc">Description will appear here.</p>
+
+    <div class="infoRow">📍 <span id="cardLocation">University Campus</span></div>
+    <div class="infoRow">🕒 <span id="cardTime">Not available</span></div>
+    <div class="infoRow">☎ <span id="cardPhone">Not available</span></div>
+
+    <button id="directionBtn" class="directionBtn" type="button">Get Directions</button>
+  </aside>
+
+  <!-- ================= LOCATION PROMPT ================= -->
+  <div id="locationPrompt" class="locationPrompt">
+    <div class="locationBox">
+      <h2>📍 Enable Location</h2>
+      <p>We need your location to provide campus navigation.</p>
+
+      <button id="allowLocationBtn" type="button">Allow Location</button>
+      <button id="skipLocationBtn" type="button">Skip for now</button>
+    </div>
+  </div>
+
+  <!-- ================= LEAFLET JS ================= -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Road Label Plugin -->
+  <script src="https://unpkg.com/leaflet-textpath/leaflet.textpath.js"></script>
+
+  <!-- ================= DATA FILES ================= -->
+  <script src="buildings.js"></script>
+  <script src="landUse.js"></script>
+  <script src="roads.js"></script>
+  <script src="poi.js"></script>
+
+  <!-- ================= MAIN APP ================= -->
+  <script src="app.js"></script>
+
+</body>
+</html>
