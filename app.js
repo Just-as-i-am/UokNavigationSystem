@@ -7,10 +7,10 @@ const map = L.map("map", {
   preferCanvas: true
 }).setView([34.135, 74.836], 17);
 
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-  attribution: "&copy; OpenStreetMap & Carto",
-  maxZoom: 20
-}).addTo(map);
+// L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+//   attribution: "&copy; OpenStreetMap & Carto",
+//   maxZoom: 20
+// }).addTo(map);
 
 /* =====================================================
    2. MAP PANES
